@@ -254,6 +254,25 @@ func main(){
 
 
 ### JavaScript：
+ <!-- 反转字符数组的辅助函数 -->
+function reverse (arr,start,end){
+    while(start < end){
+        [arr[ start ], arr[ end ]] = [arr[ end ], arr[ start ]]
+        start ++
+        end --
+    }
+}
+function rotateStringRight(s,k){
+    let arr = s.split('')
+    const len = arr.length
+    <!-- 反转整个字符数组 -->
+    reverse(arr,0,len-1)
+    <!-- 反转字符数组的前k个字符 -->
+    reverse(arr,0,k-1)
+    <!-- 反转字符数组剩余的部分 -->
+    reverse(arr,k-1，len-1)
+    return arr.join('')
+}
 
 
 ### TypeScript：
